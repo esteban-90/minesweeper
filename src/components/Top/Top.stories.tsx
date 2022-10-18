@@ -6,12 +6,11 @@ export default {
   component: Top,
 } as Meta
 
-const Template: Story<TopProps> = (args) => <Top {...args} />
+const Template: Story<TopProps> = (args) => <Top {...args}>Minesweeper</Top>
 
 export const TopExample = Template.bind({})
 
 TopExample.args = {
-  children: 'Minesweeper',
   feature: 'Flag',
   firstAction: 'ctrl',
   secondAction: 'click',
