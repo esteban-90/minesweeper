@@ -1,6 +1,18 @@
 import type { FC, PropsWithChildren } from 'react'
 import styled from '@emotion/styled'
 
+export const Level: FC<PropsWithChildren> = ({ children }): JSX.Element => {
+  return (
+    <Select>
+      {(children as string[]).map((item) => (
+        <Option value={item} key={item}>
+          {item}
+        </Option>
+      ))}
+    </Select>
+  )
+}
+
 const Select = styled.select`
   margin: 0;
   border-radius: 0;
@@ -16,15 +28,3 @@ const Option = styled.option`
   min-height: 1.2em;
   padding: 0 0.2vw 0.2vw;
 `
-
-export const Level: FC<PropsWithChildren> = ({ children }): JSX.Element => {
-  return (
-    <Select>
-      {(children as string[]).map((item) => (
-        <Option value={item} key={item}>
-          {item}
-        </Option>
-      ))}
-    </Select>
-  )
-}

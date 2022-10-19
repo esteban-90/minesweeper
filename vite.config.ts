@@ -11,5 +11,11 @@ const alias: AliasOptions = { '@': path.resolve(__dirname, './src') }
 export default defineConfig({
   plugins: [react(), VitePWA()],
   resolve: { alias },
-  test: { alias, environment: 'jsdom', globals: true, reporters: 'verbose' },
+  test: {
+    alias,
+    environment: 'jsdom',
+    globals: true,
+    reporters: 'verbose',
+    setupFiles: ['./src/setupTest.ts'],
+  },
 })
