@@ -1,21 +1,16 @@
-import type { FC, MouseEventHandler } from 'react'
-import { useState } from 'react'
+import type { FC } from 'react'
 import styled from '@emotion/styled'
-
-type ButtonHandler = MouseEventHandler<HTMLButtonElement>
+import { usePressedButton } from '@/hooks'
 
 export interface ResetProps {
   /**
    * Reset action handler
    */
-  reset: ButtonHandler
+  reset: () => void
 }
 
 export const Reset: FC<ResetProps> = ({ reset }): JSX.Element => {
-  const [pressed, setPressed] = useState<boolean>(false)
-
-  const down: ButtonHandler = () => setPressed(true)
-  const up: ButtonHandler = () => setPressed(false)
+  const [pressed, down, up] = usePressedButton()
 
   return (
     <Button onClick={reset} onMouseDown={down} onMouseUp={up} onMouseLeave={up}>

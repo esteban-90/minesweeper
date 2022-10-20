@@ -40,8 +40,8 @@ export const cellState: CellState = {
   empty: 0,
   bomb: 9,
   hidden: 10,
-  mark: 11,
-  weakMark: 12,
+  flag: 11,
+  weakFlag: 12,
 }
 
 export const emptyFieldGenerator = (size: number, state: Cell = cellState.empty): Field => {
