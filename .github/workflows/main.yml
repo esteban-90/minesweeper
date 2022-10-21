@@ -1,16 +1,21 @@
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 jobs:
   test_and_build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Test
+        with:
+          fetch-depth: 0
+      - name: Install deps
+        run: yarn
+      - name: Tests
         run: yarn test
       - name: Chromatic
-        run: yarn chromatic
-      
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
