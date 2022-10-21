@@ -13,7 +13,7 @@
     "dpdm": "dpdm --no-warning --no-tree ./src/main.tsx",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic"
+    "chromatic": "npx chromatic --project-token bec3489ecc1a"
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
