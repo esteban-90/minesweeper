@@ -1,0 +1,250 @@
+// Vitest Snapshot v1
+
+exports[`Cell test cases: > renders: > cell with status "0" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ohgs2d"
+    data-testid="0_1,1"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "1" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-kj4uv0"
+    data-testid="1_1,1"
+  >
+    1
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "2" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-6f1wo7"
+    data-testid="2_1,1"
+  >
+    2
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "3" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ild62n"
+    data-testid="3_1,1"
+  >
+    3
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "4" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-v3wr85"
+    data-testid="4_1,1"
+  >
+    4
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "5" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-nheh0a"
+    data-testid="5_1,1"
+  >
+    5
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "6" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1ttleus"
+    data-testid="6_1,1"
+  >
+    6
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "7" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1p2mldb"
+    data-testid="7_1,1"
+  >
+    7
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "8" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-a2fdva"
+    data-testid="8_1,1"
+  >
+    8
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "9" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-77ydc3"
+    data-testid="9_1,1"
+  >
+    <div
+      class="css-3tubcw"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "10" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-5803oy"
+    data-testid="10_1,1"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "11" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-5803oy"
+    data-testid="11_1,1"
+  >
+    <div
+      class="css-oefih3"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > cell with status "12" should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-5803oy"
+    data-testid="12_1,1"
+  >
+    <div
+      class="css-jm2piq"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 2`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 3`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 4`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 5`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 6`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 7`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 8`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 9`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 10`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 11`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 12`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;
+
+exports[`Cell test cases: > renders: > closed cell should render correctly 13`] = `
+<DocumentFragment>
+  <div
+    class="css-12l1qmc"
+  />
+</DocumentFragment>
+`;

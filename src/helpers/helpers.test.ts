@@ -86,6 +86,22 @@ describe('Helpers test cases:', () => {
 
         expect(incrementNeighbours(coords, field)).toStrictEqual(result)
       })
+
+      it('when neighbour cells are reached with max possible bombs', () => {
+        const field: Field = [
+          [0, 1, bomb],
+          [8, bomb, 1],
+          [8, 8, 8],
+        ]
+
+        const result: Field = [
+          [1, 2, bomb],
+          [8, bomb, 2],
+          [8, 8, 8],
+        ]
+
+        expect(incrementNeighbours(coords, field)).toStrictEqual(result)
+      })
     })
 
     describe('field 9×9:', () => {
@@ -341,10 +357,11 @@ describe('Helpers test cases:', () => {
       const mines = 25
       const probability = mines / size ** 2
       const field = fieldGenerator(size, probability)
+      const [firstRow, secondRow] = field
       const flatField = field.flat()
 
-      expect([...field[0], ...field[1]].join('')).not.toBe('99999999999999999999')
-      expect(flatField.filter(cellWithBombFilter)).toHaveLength(25)
+      expect([...firstRow, ...secondRow].join('')).not.toBe('9'.repeat(20))
+      expect(flatField.filter(cellWithBombFilter)).toHaveLength(mines)
     })
   })
 })

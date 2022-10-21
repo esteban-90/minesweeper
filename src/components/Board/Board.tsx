@@ -1,4 +1,4 @@
-import type { FC, MouseEventHandler } from 'react'
+import type { FC } from 'react'
 import styled from '@emotion/styled'
 import { Counter } from './Counter'
 import { Level } from './Level'
@@ -16,7 +16,7 @@ export interface BoardProps {
   /**
    * Action handler when the game reset button is called
    */
-  reset: MouseEventHandler<HTMLButtonElement>
+  reset: () => void
   /**
    * Bombs in the field
    */

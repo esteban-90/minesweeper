@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, createEvent } from '@testing-library/react'
 import { cellState, type Coords } from '@/helpers'
-import { Cell, type CellProps, checkIsActiveCell } from './Cell'
+import { Cell, ClosedCell, type CellProps, checkIsActiveCell } from './Cell'
 
 describe('Cell test cases:', () => {
   const coords: Coords = [1, 1]
@@ -11,32 +11,46 @@ describe('Cell test cases:', () => {
     const id = `${cell}_${coords}`
     const props: CellProps = { coords, leftClick: mockFn, rightClick: mockFn, cell, 'data-testid': id }
 
-    beforeEach(() => {
-      render(<Cell {...props} />)
+    describe('renders:', () => {
+      it(`cell with status "${cell}" should render correctly`, () => {
+        const { asFragment } = render(<Cell {...props} />)
+        expect(asFragment()).toMatchSnapshot()
+      })
+
+      it('closed cell should render correctly', () => {
+        const { asFragment } = render(<ClosedCell pressed />)
+        expect(asFragment()).toMatchSnapshot()
+      })
     })
 
-    it(`should check prevent default onContextMenu for type of cell "${cell}"`, () => {
-      const cellElement = screen.getByTestId(id)
-      const contextMenuEvent = createEvent.contextMenu(cellElement)
+    describe('events:', () => {
+      beforeEach(() => {
+        render(<Cell {...props} />)
+      })
 
-      fireEvent(cellElement, contextMenuEvent)
-      expect(contextMenuEvent.defaultPrevented).toBe(true)
-    })
+      it(`should check prevent default onContextMenu for cell with status "${cell}"`, () => {
+        const cellElement = screen.getByTestId(id)
+        const contextMenuEvent = createEvent.contextMenu(cellElement)
 
-    it(`onClick and onContextMenu handlers should be called for active cell "${cell}"`, () => {
-      const isActive = checkIsActiveCell(cell)
-      const cellElement = screen.getByTestId(id)
+        fireEvent(cellElement, contextMenuEvent)
+        expect(contextMenuEvent.defaultPrevented).toBe(true)
+      })
 
-      fireEvent.click(cellElement)
-      fireEvent.contextMenu(cellElement)
+      it(`onClick and onContextMenu handlers should be called for active cell with status "${cell}"`, () => {
+        const isActive = checkIsActiveCell(cell)
+        const cellElement = screen.getByTestId(id)
 
-      if (isActive) {
-        expect(props.leftClick).toBeCalled()
-        expect(props.rightClick).toBeCalled()
-      } else {
-        expect(props.leftClick).not.toBeCalled()
-        expect(props.rightClick).not.toBeCalled()
-      }
+        fireEvent.click(cellElement)
+        fireEvent.contextMenu(cellElement)
+
+        if (isActive) {
+          expect(props.leftClick).toBeCalled()
+          expect(props.rightClick).toBeCalled()
+        } else {
+          expect(props.leftClick).not.toBeCalled()
+          expect(props.rightClick).not.toBeCalled()
+        }
+      })
     })
   }
 })

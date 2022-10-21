@@ -2,6 +2,11 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { Reset } from './Reset'
 
 describe('Reset test cases:', () => {
+  it('should render correctly', () => {
+    const { asFragment } = render(<Reset reset={() => null} />)
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   it('reset handler should be called', () => {
     const reset = vitest.fn()
     render(<Reset reset={reset} />)

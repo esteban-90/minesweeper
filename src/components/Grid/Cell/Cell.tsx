@@ -32,58 +32,56 @@ export const checkIsActiveCell = (cell: CellType): boolean => {
 }
 
 export const Cell: FC<CellProps> = ({ cell, coords, leftClick, rightClick, 'data-testid': id }): JSX.Element => {
-  const [pressed, down, up] = usePressedButton()
-  const isActiveCell = checkIsActiveCell(cell)
+  const [pressed, onMouseDown, onMouseUp] = usePressedButton()
 
-  const clickHandler: MouseEventHandler<HTMLDivElement> = () => {
-    if (isActiveCell) leftClick(coords)
+  const onClick: MouseEventHandler<HTMLDivElement> = () => {
+    leftClick(coords)
   }
 
-  const contextMenuHandler: MouseEventHandler<HTMLDivElement> = (event) => {
+  const onContextMenu: MouseEventHandler<HTMLDivElement> = (event) => {
     event.preventDefault()
-    if (isActiveCell) rightClick(coords)
+    if (checkIsActiveCell(cell)) rightClick(coords)
   }
 
-  const mouseDownHandler: MouseEventHandler<HTMLDivElement> = () => {
-    if (isActiveCell) down()
-  }
+  type StyledCellProps = HTMLAttributes<HTMLDivElement> & { 'data-testid': typeof id }
 
-  const mouseUpHandler: MouseEventHandler<HTMLDivElement> = () => {
-    if (isActiveCell) up()
-  }
-
-  const props: HTMLAttributes<HTMLDivElement> & { 'data-testid': typeof id; pressed: typeof pressed } = {
-    onClick: clickHandler,
-    onContextMenu: contextMenuHandler,
-    onMouseDown: mouseDownHandler,
-    onMouseUp: mouseUpHandler,
-    onMouseLeave: mouseUpHandler,
+  const activeCellProps: StyledCellProps & { pressed: typeof pressed } = {
+    onClick,
+    onContextMenu,
+    onMouseDown,
+    onMouseUp,
+    onMouseLeave: onMouseUp,
     'data-testid': id,
     pressed,
+  }
+
+  const nonActiveCellProps: StyledCellProps = {
+    onContextMenu,
+    'data-testid': id,
   }
 
   const { empty, bomb, flag, weakFlag, hidden } = cellState
 
   switch (cell) {
     case empty: {
-      return <RevealedCell {...props} />
+      return <RevealedCell {...nonActiveCellProps} />
     }
 
     case bomb: {
       return (
-        <CellWithBomb {...props}>
+        <CellWithBomb {...nonActiveCellProps}>
           <Bomb />
         </CellWithBomb>
       )
     }
 
     case hidden: {
-      return <ClosedCell {...props} />
+      return <ClosedCell {...activeCellProps} />
     }
 
     case flag: {
       return (
-        <ClosedCell {...props}>
+        <ClosedCell {...activeCellProps}>
           <Flag />
         </ClosedCell>
       )
@@ -91,19 +89,19 @@ export const Cell: FC<CellProps> = ({ cell, coords, leftClick, rightClick, 'data
 
     case weakFlag: {
       return (
-        <ClosedCell {...props}>
+        <ClosedCell {...activeCellProps}>
           <WeakFlag />
         </ClosedCell>
       )
     }
 
     default: {
-      return <RevealedCell {...props}>{cell}</RevealedCell>
+      return <RevealedCell {...nonActiveCellProps}>{cell}</RevealedCell>
     }
   }
 }
 
-const ClosedCell = styled.div<{ pressed: boolean }>`
+export const ClosedCell = styled.div<{ pressed?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,7 +111,7 @@ const ClosedCell = styled.div<{ pressed: boolean }>`
   height: 1.8vw;
   background-color: #d1d1d1;
   border: 0.6vh solid transparent;
-  border-color: ${({ pressed }) => (pressed ? 'tranparent' : 'white #9e9e9e #9e9e9e white')};
+  border-color: ${({ pressed = false }) => (pressed ? 'tranparent' : 'white #9e9e9e #9e9e9e white')};
 
   &:hover {
     filter: brightness(1.1);

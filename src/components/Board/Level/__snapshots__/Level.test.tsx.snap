@@ -1,0 +1,28 @@
+// Vitest Snapshot v1
+
+exports[`Level test cases: > should render correctly 1`] = `
+<DocumentFragment>
+  <select
+    class="css-160ys9i"
+  >
+    <option
+      class="css-1ycxzc0"
+      value="beginner"
+    >
+      beginner
+    </option>
+    <option
+      class="css-1ycxzc0"
+      value="intermediate"
+    >
+      intermediate
+    </option>
+    <option
+      class="css-1ycxzc0"
+      value="expert"
+    >
+      expert
+    </option>
+  </select>
+</DocumentFragment>
+`;

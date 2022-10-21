@@ -55,12 +55,10 @@ export const fieldGenerator = (size: number, probability: number): Field => {
 
   let unprocessedCells = size ** 2
   let restCellsWithBombs = unprocessedCells * probability
-  const result: Field = emptyFieldGenerator(size)
+  const result = emptyFieldGenerator(size)
 
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
-      if (restCellsWithBombs === 0) return result
-
       if (restCellsWithBombs / unprocessedCells > Math.random()) {
         result[y][x] = cellState.bomb
         incrementNeighbours([y, x], result)

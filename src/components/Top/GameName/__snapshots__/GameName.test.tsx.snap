@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`GameName test cases: > should render correctly 1`] = `
+<DocumentFragment>
+  <h1
+    class="css-18kvaxm"
+  >
+    Minesweeper
+  </h1>
+</DocumentFragment>
+`;

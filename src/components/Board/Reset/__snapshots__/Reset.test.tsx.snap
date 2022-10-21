@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`Reset test cases: > should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="css-mdm7pv"
+  >
+    🙂
+  </button>
+</DocumentFragment>
+`;

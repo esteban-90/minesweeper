@@ -1,0 +1,37 @@
+// Vitest Snapshot v1
+
+exports[`GameLegend test cases: > should render correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="css-dn2347"
+  >
+    <h1
+      class="css-18kvaxm"
+    >
+      Minesweeper
+    </h1>
+    <legend
+      class="css-17qz6a2"
+    >
+      <strong>
+        Flag:
+      </strong>
+      <code
+        class="css-h9xasx"
+      >
+        <span
+          class="css-udfepp"
+        >
+          ctrl
+        </span>
+         + 
+        <span
+          class="css-9c23k1"
+        >
+          click
+        </span>
+      </code>
+    </legend>
+  </header>
+</DocumentFragment>
+`;

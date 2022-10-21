@@ -1,0 +1,47 @@
+// Vitest Snapshot v1
+
+exports[`Board test cases: > should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-1gexv9m"
+  >
+    <div
+      class="css-kj9346"
+    >
+      000
+    </div>
+    <select
+      class="css-160ys9i"
+    >
+      <option
+        class="css-1ycxzc0"
+        value="beginner"
+      >
+        beginner
+      </option>
+      <option
+        class="css-1ycxzc0"
+        value="intermediate"
+      >
+        intermediate
+      </option>
+      <option
+        class="css-1ycxzc0"
+        value="expert"
+      >
+        expert
+      </option>
+    </select>
+    <button
+      class="css-mdm7pv"
+    >
+      🙂
+    </button>
+    <div
+      class="css-kj9346"
+    >
+      010
+    </div>
+  </div>
+</DocumentFragment>
+`;
